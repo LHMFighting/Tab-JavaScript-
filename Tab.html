@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{padding: 10px;}
+        #tab{width: 980px;}
+        #tab ul{display: block;height: 40px;border-bottom: 1px solid rgba(128,128,28,0.5);}
+        #tab ul li{list-style: none;float: left;margin-right: 15px;height: 19px;line-height: 19px;padding: 10px 15px;color: blue}
+        #tab ul .on{border: 1px solid rgba(128,128,28,0.5);;border-bottom: 1px solid #fff;color: #000000;}
+        #tab .hide{display: none;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var tab = document.getElementById('tab');
+            var oUl = tab.getElementsByTagName('ul')[0];
+            var oLis = tab.getElementsByTagName('li');
+            var oDivs = tab.getElementsByTagName('div');
+
+            for(var i= 0,len = oLis.length;i<len;i++){
+                oLis[i].index = i;
+                oLis[i].onclick = function() {
+                    for(var n= 0;n<len;n++){
+                        oLis[n].className = "";
+                        oDivs[n].className = "hide";
+                    }
+                    this.className = "on";
+                    oDivs[this.index].className = "";
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="tab">
+        <ul>
+            <li class="on">Home</li>
+            <li>Profile</li>
+            <li>Messages</li>
+            <li>Settings</li>
+        </ul>
+
+        <div>
+            Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+        </div>
+
+        <div class="hide">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+            master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
+            keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+            salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+        </div>
+
+        <div class="hide">
+            Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+        </div>
+
+        <div class="hide">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+        </div>
+    </div>
+</body>
+</html>
